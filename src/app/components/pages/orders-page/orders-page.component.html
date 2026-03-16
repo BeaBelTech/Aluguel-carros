@@ -1,0 +1,31 @@
+<header>
+  <img
+    src="{{ userInformations.photo }}"
+    alt="Foto de perfil"
+    class="profile-picture"
+  />
+  <p class="name">{{ userInformations.user }}</p>
+</header>
+<main>
+  <section>
+    <div *ngIf="infoMessage.length === 0; else informations"></div>
+    <h1>Reservas ativas</h1>
+    <div *ngIf="carReserved?.id; else noneResult" class="reserved-container">
+      <app-card-car [carItem]="carReserved!"></app-card-car>
+      <button class="back-to-home" (click)="cancelReserve()">
+        Finalizar reserva
+      </button>
+    </div>
+  </section>
+</main>
+
+<ng-template #noneResult>
+  <div class="none-result">
+    <p class="no-cars">Você não tem nenhuma reserva ativa</p>
+    <button class="back-to-home" routerLink="/home">Escolher carro</button>
+  </div>
+</ng-template>
+
+<ng-template #informations>
+  <p class="informations">{{ infoMessage }}</p>
+</ng-template>

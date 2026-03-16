@@ -1,0 +1,181 @@
+{
+  "cars": [
+    {
+      "id": "4b16",
+      "name": "Partner",
+      "year": "2016",
+      "type": "Utilitário",
+      "engine": "1.6",
+      "size": "2",
+      "isReserved": false
+    },
+    {
+      "name": "Fiorino",
+      "year": "2017",
+      "type": "Utilitário leve",
+      "engine": "1.6",
+      "size": "2",
+      "isReserved": false,
+      "id": "0eb4"
+    },
+    {
+      "name": "Doblo",
+      "year": "2018",
+      "type": "Minivan",
+      "engine": "1.8",
+      "size": "7",
+      "isReserved": false,
+      "id": "75c1"
+    },
+    {
+      "name": "Toro",
+      "year": "2016",
+      "type": "Picape média",
+      "engine": "1.6",
+      "size": "5",
+      "isReserved": false,
+      "id": "25fe"
+    },
+    {
+      "name": "Ford Ká",
+      "year": "2019",
+      "type": "Sedan Compacto",
+      "engine": "1.0",
+      "size": "5",
+      "isReserved": false,
+      "id": "d1ed"
+    },
+    {
+      "name": "Versa",
+      "year": "2019",
+      "type": "Sedan médio",
+      "engine": "1.4",
+      "size": "5",
+      "isReserved": false,
+      "id": "3321"
+    },
+    {
+      "name": "Jetta",
+      "year": "2021",
+      "type": "Sedan grande",
+      "engine": "2.0",
+      "size": "5",
+      "isReserved": false,
+      "id": "5664"
+    },
+    {
+      "name": "Saveiro",
+      "year": "2018",
+      "type": "Picape leve-média",
+      "engine": "1.6",
+      "size": "5",
+      "isReserved": false,
+      "id": "c4ff"
+    },
+    {
+      "name": "Strada",
+      "year": "2016",
+      "type": "Picape leve",
+      "engine": "1.4",
+      "size": "2",
+      "isReserved": false,
+      "id": "e4b0"
+    },
+    {
+      "name": "Camaro",
+      "year": "2017",
+      "type": "Coupé",
+      "engine": "2.0",
+      "size": "4",
+      "isReserved": false,
+      "id": "36c8"
+    },
+    {
+      "name": "T-Cross",
+      "year": "2020",
+      "type": "Crossover",
+      "engine": "1.6",
+      "size": "5",
+      "isReserved": false,
+      "id": "4fe1"
+    },
+    {
+      "name": "Tiggo 8",
+      "year": "2021",
+      "type": "SUV Grande",
+      "engine": "2.0",
+      "size": "7",
+      "isReserved": false,
+      "id": "796e"
+    }
+  ],
+  "users": [
+    {
+      "bookIt": false,
+      "carReserved": {},
+      "historyReservations": [
+        {
+          "name": "Partner",
+          "year": "2016",
+          "type": "Utilitário",
+          "engine": "1.6",
+          "size": "2",
+          "isReserved": false,
+          "id": "4b16"
+        }
+      ],
+      "id": "1",
+      "user": "admin",
+      "password": "1",
+      "photo": "C:\\fakepath\\402dd1b3f8ce3632b376ce0afda1ee5ebc8762e6.png"
+    },
+    {
+      "id": "8a7ad753-6f51-4319-92d7-89d9ce6fbeef",
+      "user": "tst",
+      "password": "1",
+      "bookIt": false,
+      "historyReservations": [
+        {
+          "name": "Partner",
+          "year": "2016",
+          "type": "Utilitário",
+          "engine": "1.6",
+          "size": "2",
+          "isReserved": false,
+          "id": "4b16"
+        }
+      ],
+      "carReserved": null,
+      "photo": null
+    },
+    {
+      "id": "8a7ad753-6f51-4315-92d7-89d9ce6fbeef",
+      "user": "tst2",
+      "password": "1",
+      "bookIt": false,
+      "historyReservations": [
+        {
+          "name": "Partner",
+          "year": "2016",
+          "type": "Utilitário",
+          "engine": "1.6",
+          "size": "2",
+          "isReserved": false,
+          "id": "4b16"
+        },
+        {
+          "name": "Fiorino",
+          "year": "2017",
+          "type": "Utilitário leve",
+          "engine": "1.6",
+          "size": "2",
+          "isReserved": false,
+          "id": "0eb4"
+        }
+      ],
+      "carReserved": null,
+      "photo": null
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

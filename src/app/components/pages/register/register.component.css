@@ -1,0 +1,89 @@
+* {
+  border: none;
+}
+
+.register-container {
+  height: 100vh;
+  background: url("/images/Login-background-mobile.svg") no-repeat top center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.logo-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 75vw;
+  flex-grow: 1;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input {
+  box-shadow: 0 3px 7.5px #0000000d;
+  border-radius: 2rem;
+  height: 3rem;
+  padding-inline: 1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.register-button-contained {
+  background-color: #c61d35;
+  border-radius: 2rem;
+  box-shadow: 0 3px 7.5px #00000079;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  height: 2.9rem;
+}
+
+.register-button-contained:hover {
+  background-color: transparent;
+  border: 1px solid #c61d35;
+  color: #c61d35;
+  transition: all 0.3s ease-in-out;
+}
+
+.suport-button {
+  background-color: transparent;
+  color: white;
+}
+
+.register {
+  margin-bottom: 3rem;
+}
+
+.login {
+  text-decoration: underline;
+}
+
+.warning-informations {
+  background-color: red;
+  margin-block: 1rem;
+  color: white;
+  border-radius: 2rem;
+  text-align: center;
+  padding-block: 0.2rem;
+  width: 80%;
+}

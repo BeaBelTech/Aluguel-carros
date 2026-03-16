@@ -1,0 +1,131 @@
+header {
+  background: url("/images/User-background.svg") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.profile-picture {
+  max-height: 50%;
+}
+
+.name {
+  color: white;
+  text-transform: capitalize;
+}
+
+article.inputs {
+  position: absolute;
+  top: 90%;
+  display: flex;
+  gap: 1rem;
+}
+
+.input-search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  width: 16px;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#searchCar {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 3px 3px #00000029;
+  padding-right: 2rem;
+  padding-block: 1rem;
+  padding-left: 2.3rem;
+}
+
+.filter-button {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 3px 3px #00000029;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 0.9rem;
+  background-color: white;
+}
+
+.filter-icon {
+  width: 16px;
+  height: 16px;
+}
+
+main {
+  margin-block: 3rem;
+  padding-inline: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carousel-container {
+  overflow-x: auto;
+}
+
+.carousel-line {
+  display: flex;
+  gap: 1.2rem;
+  padding-left: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+h1 {
+  font-size: large;
+}
+
+.qr-code {
+  background-color: rgba(29, 43, 58, 1);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2353);
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+}
+
+.no-cars {
+  text-align: center;
+  font-weight: 500;
+  color: red;
+  font-size: small;
+}
+
+@media screen and (min-width: 768px) {
+  article.inputs {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .input-search-container {
+    width: 60vw;
+  }
+
+  #searchCar {
+    width: 100%;
+  }
+}

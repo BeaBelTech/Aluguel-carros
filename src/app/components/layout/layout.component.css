@@ -1,0 +1,14 @@
+.content-layout {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.5rem;
+}
+
+.router {
+  position: relative;
+}
+
+.navigation {
+  position: fixed;
+  bottom: 0rem;
+}

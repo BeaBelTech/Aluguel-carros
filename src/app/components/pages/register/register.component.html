@@ -1,0 +1,58 @@
+<div class="register-container">
+  <div class="logo-container">
+    <img src="/images/Guardians-logo.svg" alt="Logo Guardians" class="logo" />
+  </div>
+  <div *ngIf="warningMessage.length === 0; else warningInformations"></div>
+  <form
+    class="form-container"
+    [formGroup]="registerForm"
+    (ngSubmit)="register()"
+  >
+    <div class="inputs-container">
+      <label for="user"></label>
+      <input
+        class="input"
+        type="text"
+        name="user"
+        id="user"
+        formControlName="user"
+        placeholder="Usuário"
+      />
+      <label for="password"></label>
+      <input
+        class="input"
+        type="password"
+        name="password"
+        id="password"
+        formControlName="password"
+        placeholder="Senha"
+      />
+      <label for="passwordConfirmed"></label>
+      <input
+        class="input"
+        type="password"
+        name="passwordConfirmed"
+        id="passwordConfirmed"
+        formControlName="passwordConfirmed"
+        placeholder="Confirme sua senha"
+      />
+    </div>
+    <div class="buttons">
+      <button
+        type="submit"
+        class="register-button-contained"
+        [disabled]="registerForm.invalid"
+      >
+        Cadatrar-se
+      </button>
+    </div>
+  </form>
+  <button class="suport-button register" routerLink="/login">
+    Já tem conta?
+    <span class="login">Fazer login</span>
+  </button>
+</div>
+
+<ng-template #warningInformations>
+  <p class="warning-informations">{{ warningMessage }}</p>
+</ng-template>

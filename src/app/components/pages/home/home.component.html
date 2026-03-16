@@ -1,0 +1,110 @@
+<div>
+  <header>
+    <img
+      src="{{ userInformations.photo }}"
+      alt="Foto de perfil"
+      class="profile-picture"
+    />
+    <p class="name">Olá, {{ userInformations.name }}!</p>
+    <article class="inputs">
+      <div class="input-search-container">
+        <img
+          src="images/Search-icon.svg"
+          alt="ícon de busca"
+          class="search-icon"
+        />
+        <input
+          type="search"
+          placeholder="Buscar carro"
+          name="searchCar"
+          id="searchCar"
+          (keyup)="searchCarByName()"
+          [(ngModel)]="carSearched"
+        />
+      </div>
+      <button class="filter-button" routerLink="filters">
+        <img
+          src="images/Filter-icon.svg"
+          alt="ícone de filtro"
+          class="filter-icon"
+        />
+        Filtrar
+      </button>
+    </article>
+  </header>
+  <main *ngIf="carSearched.length === 0; else searchedCars">
+    <section>
+      <h1>Reservas ativas</h1>
+      <div *ngIf="carReserved?.id; else noneResult">
+        <app-card-car
+          (updated)="refreshAll()"
+          [carItem]="carReserved!"
+        ></app-card-car>
+      </div>
+    </section>
+    <section>
+      <h1>Veículos disponíveis</h1>
+      <div class="carousel-container">
+        <div
+          class="carousel-line"
+          *ngIf="carsAvaliable.length > 0; else noCarsAvaliable"
+        >
+          <div *ngFor="let car of carsAvaliable">
+            <app-card-car
+              (updated)="refreshAll()"
+              [carItem]="car"
+            ></app-card-car>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1>Histórico de reservas</h1>
+      <div class="carousel-container">
+        <div
+          class="carousel-line"
+          *ngIf="historyCars.length > 0; else noHistory"
+        >
+          <div *ngFor="let car of historyCars">
+            <app-card-car
+              (updated)="refreshAll()"
+              [carItem]="car"
+            ></app-card-car>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class="qr-code">
+      <img src="images/Qr-code-icon.svg" alt="ícone de qr code" />Acessar por QR
+      code
+    </button>
+  </main>
+</div>
+
+<ng-template #noHistory>
+  <p class="no-cars">Nenhuma reserva realizada</p>
+</ng-template>
+
+<ng-template #noCarsAvaliable>
+  <p class="no-cars">Nenhum carro disponível</p>
+</ng-template>
+
+<ng-template #noneResult>
+  <main>
+    <p class="no-cars">Nenhum carro encontrado</p>
+  </main>
+</ng-template>
+
+<ng-template #searchedCars>
+  <main *ngIf="resultOfSearch.length > 0; else noneResult">
+    <h1>Resultado(s) da pesquisa</h1>
+    <div *ngFor="let car of resultOfSearch">
+      <div class="carousel-container">
+        <div class="carousel-line">
+          <app-card-car (updated)="refreshAll()" [carItem]="car"></app-card-car>
+        </div>
+      </div>
+    </div>
+  </main>
+</ng-template>

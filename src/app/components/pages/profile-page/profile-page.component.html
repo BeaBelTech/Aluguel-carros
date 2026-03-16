@@ -1,0 +1,66 @@
+<div>
+  <header>
+    <img
+      src="{{ userInformations.photo }}"
+      alt="Foto de perfil"
+      class="profile-picture"
+    />
+    <p class="name">{{ userInformations.user }}</p>
+  </header>
+  <main>
+    <h1>Edite as informações que desejar</h1>
+    <div *ngIf="warningAlert.length === 0; else warningInformations"></div>
+    <form class="form-container" [formGroup]="editForm" (ngSubmit)="editUser()">
+      <div class="inputs-container">
+        <div class="inputs">
+          <input
+            class="input"
+            type="text"
+            name="user"
+            id="user"
+            formControlName="user"
+            placeholder="Usuário"
+          />
+          <p class="show-informations">
+            Seu nome de usuário atual: {{ userInformations.user }}
+          </p>
+        </div>
+        <div class="inputs">
+          <input
+            class="input"
+            type="password"
+            name="password"
+            id="password"
+            formControlName="password"
+            placeholder="Nova senha"
+          />
+          <p class="show-informations">
+            Sua senha atual: {{ userInformations.password }}
+          </p>
+        </div>
+        <input
+          type="file"
+          name="photo"
+          id="photo"
+          class="custom-file"
+          formControlName="photo"
+          [(ngModel)]="userInformations.photo"
+        />
+      </div>
+      <div class="buttons">
+        <button
+          type="submit"
+          class="login-button-contained"
+          [disabled]="editForm.invalid"
+        >
+          Salvar
+        </button>
+      </div>
+    </form>
+    <button (click)="deleteUser()" class="exclude-btn">Excluir perfil</button>
+  </main>
+</div>
+
+<ng-template #warningInformations>
+  <p class="warning-informations">{{ warningAlert }}</p>
+</ng-template>

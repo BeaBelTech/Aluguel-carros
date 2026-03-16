@@ -1,0 +1,25 @@
+<div class="container">
+  <button
+    routerLink="/home"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <img src="images/Home-icon.svg" alt="ícone de casa" />
+    Início
+  </button>
+
+  <button routerLink="/home/order" routerLinkActive="active">
+    <img src="images/Order-icon.svg" alt="ícone de agenda" />
+    Agendamentos
+  </button>
+
+  <button routerLink="/home/suport" routerLinkActive="active">
+    <img src="images/Phone-icon.svg" alt="ícone de telefone" />
+    Central
+  </button>
+
+  <button routerLink="/home/profile" routerLinkActive="active">
+    <img src="images/Profile-icon.svg" alt="ícone de perfil" />
+    Perfil
+  </button>
+</div>

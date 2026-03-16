@@ -1,0 +1,44 @@
+button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container {
+  display: grid;
+  width: 100vw;
+  padding-block: 1rem;
+  background-color: white;
+  grid-template-columns: repeat(4, 1fr);
+  box-shadow:
+    0px -1px 3px 0px rgba(148, 148, 148, 0.1),
+    0px -6px 6px 0px rgba(148, 148, 148, 0.09),
+    0px -12px 7px 0px rgba(148, 148, 148, 0.05),
+    0px -22px 9px 0px rgba(148, 148, 148, 0.01),
+    0px -35px 10px 0px rgba(148, 148, 148, 0);
+}
+
+button {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+img {
+  filter: brightness(0);
+}
+
+button.active {
+  color: red;
+}
+
+button.active img {
+  filter: brightness(0) saturate(100%) invert(16%) sepia(94%) saturate(7492%)
+    hue-rotate(1deg) brightness(97%) contrast(118%);
+}

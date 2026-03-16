@@ -1,0 +1,98 @@
+<div>
+  <header>
+    <h1>Veículos</h1>
+  </header>
+
+  <main>
+    <h2>Gerencie seus veículos</h2>
+    <h3>Todos os veículos cadastrados:</h3>
+    <section class="carousel-container">
+      <div
+        class="carousel-line"
+        *ngIf="allCars.length > 0; else noCarsAvaliable"
+      >
+        <div *ngFor="let car of allCars">
+          <app-card-car (updated)="getAllCars()" [carItem]="car"></app-card-car>
+        </div>
+      </div>
+    </section>
+    <button
+      *ngIf="!isCreating"
+      class="secondary-button btn"
+      (click)="clickCreateCar()"
+    >
+      Cadastrar veículo
+    </button>
+
+    <section *ngIf="!isCreating; else registerCar"></section>
+  </main>
+</div>
+
+<ng-template #noCarsAvaliable>
+  <p class="no-cars">Nenhum carro disponível</p>
+</ng-template>
+
+<ng-template #registerCar>
+  <form action="" [formGroup]="createForm" (ngSubmit)="postRegisterCar()">
+    <div class="inputs-container">
+      <label for="name"></label>
+      <input
+        class="input"
+        type="text"
+        name="name"
+        id="name"
+        formControlName="name"
+        placeholder="Nome do carro"
+      />
+      <label for="year"></label>
+      <input
+        class="input"
+        type="number"
+        name="year"
+        id="year"
+        formControlName="year"
+        placeholder="Ano"
+      />
+      <label for="type"></label>
+      <input
+        class="input"
+        type="text"
+        name="type"
+        id="type"
+        formControlName="type"
+        placeholder="Tipo"
+      />
+      <label for="engine"></label>
+      <input
+        class="input"
+        type="text"
+        name="engine"
+        id="engine"
+        formControlName="engine"
+        placeholder="Motor"
+      />
+      <label for="size"></label>
+      <input
+        class="input"
+        type="number"
+        name="size"
+        id="size"
+        formControlName="size"
+        placeholder="Tamanho (lugares)"
+      />
+    </div>
+    <div class="container-action-button">
+      <button
+        class="primary-button btn"
+        type="submit"
+        (click)="postRegisterCar()"
+        [disabled]="createForm.invalid"
+      >
+        Salvar
+      </button>
+      <button class="link-button btn" (click)="cancelCreatingCar()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</ng-template>

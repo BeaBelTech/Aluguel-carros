@@ -1,0 +1,100 @@
+<div class="card-container">
+  <div class="img-container">
+    <img class="car-image" src="images/Imagem 15.png" alt="Imagem de carro" />
+  </div>
+  <div class="info-container">
+    <p *ngIf="isEditing" class="actual-information">Informações atuais:</p>
+    <p>
+      <strong>{{ carItem.name }}</strong>
+    </p>
+    <p>{{ carItem.type }}</p>
+    <p>Motor {{ carItem.engine }}</p>
+    <p>{{ carItem.size }} Lugares</p>
+  </div>
+  <div *ngIf="endpoint === 'home'; else suport">
+    <button
+      class="primary-button btn"
+      *ngIf="!carReserved; else haveCarReserved"
+      (click)="reserveCar()"
+    >
+      Reservar
+    </button>
+  </div>
+</div>
+
+<ng-template #suport>
+  <div *ngIf="endpoint === 'suport'" class="container-action-button">
+    <div *ngIf="!isEditing; else editing">
+      <button class="primary-button btn" (click)="clickEditCar()">
+        Editar veículo
+      </button>
+      <button class="link-button btn" (click)="deleteCar()">
+        Excluir veículo
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #editing>
+  <form [formGroup]="editForm" (ngSubmit)="postEditCar()">
+    <div class="inputs-container">
+      <label for="name"></label>
+      <input
+        class="input"
+        type="text"
+        name="name"
+        id="name"
+        formControlName="name"
+        placeholder="Nome do carro"
+      />
+      <label for="year"></label>
+      <input
+        class="input"
+        type="number"
+        name="year"
+        id="year"
+        formControlName="year"
+        placeholder="Ano"
+      />
+      <label for="type"></label>
+      <input
+        class="input"
+        type="text"
+        name="type"
+        id="type"
+        formControlName="type"
+        placeholder="Tipo"
+      />
+      <label for="engine"></label>
+      <input
+        class="input"
+        type="text"
+        name="engine"
+        id="engine"
+        formControlName="engine"
+        placeholder="Motor"
+      />
+      <label for="size"></label>
+      <input
+        class="input"
+        type="number"
+        name="size"
+        id="size"
+        formControlName="size"
+        placeholder="Tamanho (lugares)"
+      />
+    </div>
+    <div class="container-action-button">
+      <button class="primary-button btn" type="submit" (click)="postEditCar()">
+        Salvar
+      </button>
+      <button class="link-button btn" (click)="cancelEditingCar()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #haveCarReserved>
+  <p class="no-cars">Você já tem um carro reservado.</p>
+</ng-template>

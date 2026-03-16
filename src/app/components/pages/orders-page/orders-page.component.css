@@ -1,0 +1,77 @@
+header {
+  background: url("/images/User-background.svg") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-picture {
+  max-height: 50%;
+}
+
+.name {
+  color: white;
+  text-transform: capitalize;
+}
+
+main {
+  margin-block: 3rem;
+  padding-inline: 3rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reserved-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.back-to-home {
+  background-color: rgba(29, 43, 58, 1);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2353);
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+  border: none;
+  width: 100%;
+}
+.none-result {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.no-cars {
+  text-align: center;
+  font-weight: 500;
+  color: red;
+}
+
+h1 {
+  font-size: large;
+}
+
+.informations {
+  background-color: rgb(66, 115, 240);
+  margin-block: 1rem;
+  color: white;
+  border-radius: 2rem;
+  text-align: center;
+  padding-block: 0.5rem;
+  width: 100%;
+}
