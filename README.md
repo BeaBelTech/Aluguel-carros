@@ -4,5 +4,6 @@
 
 - Baixar as dependências do projeto, utilizando o comando **npm i**
 - Entrar na pasta "backend" e utilizar o comando **npm i**, para baixar as dependências.
+  - Também utilizar o comando **npm i json-server**
   - logo depois, utilize o comando **npm start** para iniciar os dados que vamos utilizar
-- Voltando para a pasta principal, você deve rodar o projeto utilizando o comando **ng serve**
+- Voltando para a pasta principal, você deve rodar o projeto utilizando o comando **ng serve** em outro terminal. O backend deve ser executado simultaneamente
